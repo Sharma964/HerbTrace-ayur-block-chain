@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ayurvedic Herb Traceability Design System - Natural & Modern */
+
+@layer base {
+  :root {
+    /* Base colors - Natural earth tones */
+    --background: 35 10% 97%;
+    --foreground: 140 5% 15%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 140 5% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 5% 15%;
+
+    /* Primary - Deep herb green */
+    --primary: 140 60% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 140 50% 35%;
+
+    /* Secondary - Warm earth */
+    --secondary: 30 40% 88%;
+    --secondary-foreground: 140 60% 25%;
+
+    /* Muted tones */
+    --muted: 45 15% 92%;
+    --muted-foreground: 140 10% 45%;
+
+    /* Accent - Golden spice */
+    --accent: 45 80% 65%;
+    --accent-foreground: 140 60% 25%;
+
+    /* Status colors */
+    --success: 140 60% 45%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 35 85% 60%;
+    --warning-foreground: 140 60% 25%;
+    
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* UI elements */
+    --border: 140 15% 85%;
+    --input: 140 15% 90%;
+    --ring: 140 60% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --herb-gradient: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --earth-gradient: linear-gradient(135deg, hsl(var(--accent)), hsl(35 70% 75%));
+    --natural-gradient: linear-gradient(180deg, hsl(var(--background)), hsl(45 20% 94%));
+    
+    /* Shadows with natural colors */
+    --shadow-natural: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--accent) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme - Deep forest and natural tones */
+    --background: 140 15% 8%;
+    --foreground: 45 20% 92%;
+
+    --card: 140 20% 12%;
+    --card-foreground: 45 20% 92%;
+
+    --popover: 140 20% 12%;
+    --popover-foreground: 45 20% 92%;
+
+    --primary: 140 50% 65%;
+    --primary-foreground: 140 15% 8%;
+    --primary-glow: 140 60% 55%;
+
+    --secondary: 140 25% 15%;
+    --secondary-foreground: 45 20% 92%;
+
+    --muted: 140 25% 15%;
+    --muted-foreground: 140 15% 65%;
+
+    --accent: 45 70% 75%;
+    --accent-foreground: 140 15% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--natural-gradient);
+    min-height: 100vh;
+  }
+  
+  /* Custom utility classes */
+  .gradient-herb {
+    background: var(--herb-gradient);
+  }
+  
+  .gradient-earth {
+    background: var(--earth-gradient);
+  }
+  
+  .shadow-natural {
+    box-shadow: var(--shadow-natural);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* QR Code styling */
+  .qr-scanner-container canvas {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* 3D Effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Glassmorphism effects */
+  .glass-card {
+    backdrop-filter: blur(10px);
+    background: hsl(var(--card) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
